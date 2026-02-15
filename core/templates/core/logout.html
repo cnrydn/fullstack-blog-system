@@ -1,0 +1,20 @@
+{% extends "core/base.html" %}
+
+{% block content %}
+<div class="detail-container">
+    <div class="card form-card">
+
+        <h2>Çıkış Ekranı</h2>
+        <p><strong>Hesabınızdan çıkmak istediğinize emin misiniz?</strong></p>
+
+        <div class="btn-group">
+            <a href="{% url 'home' %}" class="standart-btn">Vazgeç</a>
+            <form method="post">
+                {% csrf_token %}
+                <button type="submit" class="standart-btn danger-btn">Çıkış Yap</button>
+            </form>           
+        </div>
+
+    </div>
+</div>
+{% endblock %}

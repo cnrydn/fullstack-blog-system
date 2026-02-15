@@ -1,0 +1,13 @@
+{% extends "core/base.html" %}
+
+{% block content %}
+<div class="card" style="max-width:400px;margin:40px auto;">
+    <h2>Giriş Ekranı</h2>
+
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="standart-btn">Giriş Yap</button>
+    </form>
+</div>
+{% endblock %}

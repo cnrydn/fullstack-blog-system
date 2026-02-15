@@ -1,0 +1,52 @@
+{% extends "core/base.html" %}
+
+{% block content %}
+
+<div class="detail-container">
+    <div class="card form-card">
+
+        <h2>Post Ara</h2>
+
+        <form method="GET" class="form-wrapper">
+
+            <div class="form-row">
+                <input type="text" name="q" id="search" placeholder="Aramak istediğiniz kelimeyi giriniz."
+                       value="{{ query|default:'' }}">
+            </div>
+
+            <div class="btn-group">
+                <button type="submit" class="standart-btn">
+                    Ara
+                </button>
+            </div>
+
+        </form>
+
+    </div>
+</div>
+
+{% if query %}
+<div class="posts-container">
+
+    {% if posts %}
+        {% for post in posts %}
+            <div class="card">
+                <h3>{{ post.title }}</h3>
+                <p>{{ post.content|truncatewords:20 }}</p>
+
+                <a href="{% url 'post_detail' post.id %}"
+                   class="standart-btn">
+                    Postu Oku →
+                </a>
+            </div>
+        {% endfor %}
+    {% else %}
+        <div class="card">
+            <p>Sonuç bulunamadı.</p>
+        </div>
+    {% endif %}
+
+</div>
+{% endif %}
+
+{% endblock %}

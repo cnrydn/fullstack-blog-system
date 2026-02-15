@@ -1,0 +1,40 @@
+{% extends "core/base.html" %}
+
+{% block content %}
+
+<div class="detail-container">
+    <div class="card detail-card">
+
+        <!-- Başlık -->
+        <h2>{{ post.title }}</h2>
+
+        <!-- İçerik -->
+        <p>{{ post.content }}</p>
+
+        <!-- Buton Alanı -->
+        <div class="btn-group">
+
+            {% if user.is_authenticated and user == post.author %}
+                
+                <a href="{% url 'post_update' post.id %}" class="standart-btn">
+                    Düzenle
+                </a>
+
+                <a href="{% url 'post_delete' post.id %}" class="standart-btn danger-btn">
+                    Sil
+                </a>
+
+            {% else %}
+                
+                <a href="{% url 'profile' post.author.username %}" class="light-btn">
+                    @{{ post.author.username }}
+                </a>
+
+            {% endif %}
+
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}

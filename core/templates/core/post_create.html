@@ -1,0 +1,33 @@
+{% extends "core/base.html" %}
+
+{% block content %}
+<div class="detail-container">
+    <div class="card detail-card">
+        <h2>Yeni Post Oluştur</h2>
+
+        <form method="POST" class="form-wrapper">
+            {% csrf_token %}
+
+            <div class="form-row">
+                <input type="text" name="title" id="id_title" placeholder="Başlık"
+                       value="{{ form.title.value|default_if_none:'' }}">
+            </div>
+            {% if form.title.errors %}
+                <div class="form-error">{{ form.title.errors.0 }}</div>
+            {% endif %}
+
+            <div class="form-row">
+                <textarea name="content" id="id_content" placeholder="İçerik">{{ form.content.value|default_if_none:'' }}</textarea>
+            </div>
+            {% if form.content.errors %}
+                <div class="form-error">{{ form.content.errors.0 }}</div>
+            {% endif %}
+
+            <div class="btn-group">
+                <button type="submit" class="standart-btn">Kaydet</button>
+                <a href="{% url 'home' %}" class="standart-btn">İptal</a>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

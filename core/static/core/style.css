@@ -1,0 +1,228 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  font-family: "Inter", "Segoe UI", -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: white;
+}
+
+header nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  background-color: #131A22;
+  padding: 20px;
+}
+
+header nav a {
+  color: white;
+  text-decoration: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  border: 2px solid transparent;
+  transition: all 0.2s ease;
+}
+
+header nav a:hover {
+  border: 2px solid white;
+}
+
+main {
+  flex: 1;
+  padding: 40px 20px;
+}
+
+.posts-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.posts-container .card {
+  width: 300px;
+}
+
+.card {
+  border-radius: 8px;
+  background-color: rgb(221, 221, 221);
+  box-shadow: 0 1px 12px rgba(0, 0, 0, 0.1);
+  padding: 30px 20px;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.detail-card {
+  max-width: 900px;
+  width: 100%;
+  padding: 40px 30px;
+  margin: 60px auto;
+}
+
+.detail-card h2 {
+  margin-bottom: 30px;
+}
+
+.detail-card p {
+  margin-bottom: 70px;
+}
+
+.form-card {
+  max-width: 600px;
+  width: 100%;
+  padding: 40px 30px;
+  margin: 60px auto;
+}
+
+.light-btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 120px;
+  height: 42px;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: inherit;
+  background-color: white;
+  color: black;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 0 16px;
+  box-sizing: border-box;
+  transition: background-color 0.2s ease;
+}
+
+.light-btn:hover {
+  background-color: #f2f2f2;
+}
+
+.btn-group {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.standart-btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 120px;
+  height: 42px;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: inherit;
+  color: white;
+  background-color: #434ee4;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  text-decoration: none;
+  padding: 0 16px;    
+  box-sizing: border-box; 
+  transition: background-color 0.2s ease;
+}
+
+.standart-btn:hover {
+  background-color: #3d35d3;
+}
+
+button.standart-btn {
+  border: none;
+  outline: none;
+}
+
+
+.danger-btn {
+  background-color: #d32f2f;
+}
+
+.danger-btn:hover {
+  background-color: #b71c1c;
+}
+
+.messages-container {
+  max-width: 800px;
+  margin: 20px auto;
+}
+
+.message {
+  padding: 10px 15px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+.message.error {
+  background-color: #f8d7da;
+  color: #842029;
+}
+
+.message.success {
+  background-color: #d1e7dd;
+  color: #0f5132;
+}
+
+.form-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  max-width: 700px;
+  margin: 0 auto;  
+}
+
+.form-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 20px;
+}
+
+.form-row label {
+  width: 130px;
+  text-align: right;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+.form-row input,
+.form-row textarea {
+  width: 380px;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-family: inherit;
+}
+
+.form-row textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.form-error {
+  color: #842029;
+  font-size: 14px;
+  margin-left: 150px;
+}
+
+.site-footer {
+  background-color: #131A22;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+  font-size: 14px;
+}
+
+.site-footer a {
+  color: white;
+  text-decoration: none;
+  margin: 0 8px;
+}
+
+.site-footer a:hover {
+  text-decoration: underline;
+}

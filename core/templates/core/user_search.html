@@ -1,0 +1,50 @@
+{% extends "core/base.html" %}
+
+{% block content %}
+
+<div class="detail-container">
+    <div class="card form-card">
+
+        <h2>Kullanıcı Ara</h2>
+
+        <form method="GET" class="form-wrapper">
+
+            <div class="form-row">
+                <input type="text" name="q" id="search" placeholder="Aramak istediğiniz kullanıcıyı giriniz."
+                       value="{{ query|default:'' }}">
+            </div>
+
+            <div class="btn-group">
+                <button type="submit" class="standart-btn">
+                    Ara
+                </button>
+            </div>
+
+        </form>
+
+    </div>
+</div>
+
+{% if query %}
+<div class="posts-container">
+
+    {% if users %}
+        {% for user_obj in users %}
+            <div class="card">
+                <h3>@{{ user_obj.username }}</h3>
+                <a href="{% url 'profile' user_obj.username %}"
+                   class="light-btn">
+                    Profili Gör
+                </a>
+            </div>
+        {% endfor %}
+    {% else %}
+        <div class="card">
+            <p>Sonuç bulunamadı.</p>
+        </div>
+    {% endif %}
+
+</div>
+{% endif %}
+
+{% endblock %}

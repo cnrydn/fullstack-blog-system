@@ -1,0 +1,21 @@
+{% extends "core/base.html" %}
+
+{% block content %}
+
+<div class="detail-container">
+    <div class="card form-card">
+    <h2>Postu Sil</h2>
+    <p>“<strong>{{ post.title }}</strong>” başlıklı postu silmek üzeresiniz.</p>
+    <p><strong>Bu işlem geri alınamaz.</strong></p>
+
+    <form method="POST" class="btn-group">
+      {% csrf_token %}
+      <button type="submit" class="standart-btn danger-btn">Sil</button>
+      <a href="{% url 'post_detail' id=post.id %}" class="standart-btn">Vazgeç</a>
+    </form>
+
+  </div>
+
+</div>
+
+{% endblock %}

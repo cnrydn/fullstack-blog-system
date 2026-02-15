@@ -1,0 +1,30 @@
+{% extends "core/base.html" %}
+
+{% block content %}
+<div class="posts-container">
+    {% for post in page_obj %}
+        <div class="card">
+            <h2>{{ post.title }}</h2>
+            <p>{{ post.content|truncatewords:20 }}</p>
+            <p>@{{post.author}}</p>
+            <a href="{% url 'post_detail' id=post.id %}" class="standart-btn">Postu Oku →</a>
+        </div>
+    {% empty %}
+        <p>Henüz post yok.</p>
+    {% endfor %}
+</div>
+
+<div style="text-align:center; margin-top:30px;">
+    {% if page_obj.has_previous %}
+        <a href="?page={{ page_obj.previous_page_number }}">« Önceki</a>
+    {% endif %}
+
+    <span style="margin:0 10px;">
+        Sayfa {{ page_obj.number }} / {{ page_obj.paginator.num_pages }}
+    </span>
+
+    {% if page_obj.has_next %}
+        <a href="?page={{ page_obj.next_page_number }}">Sonraki »</a>
+    {% endif %}
+</div>
+{% endblock %}
